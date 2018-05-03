@@ -1,5 +1,5 @@
 # Welcome
-FarPay has extended the event model with external webhooks, that are fire internal events to your invoice/payment system.
+FarPay has extended the event model with external webhooks, that are fire internal events to your domain system.
 
 # Communication form
 All Webhooks have the it in common taht, they can be communicated with
