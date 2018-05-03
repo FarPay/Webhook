@@ -6,7 +6,7 @@ The payment webhook is executed from the FarPay' core system, since it exposes e
 # Payment events
 The events that are sent as webhooks are 
 
-| Event          | Value  | Description  |
+| OrderEvent     | Value  | Description  |
 |----------------|--------|--------------|
 | Succeeded      |  200   | The payment was successfully executed |
 | Canceled       |  210   | The customer has cancelled the payment |
@@ -26,7 +26,7 @@ There are three ways of receiving the webhooks to your business domain.
 ```JavaScript
 "Order": {  
   "Token" : "Token123ABC",  
-  "OrderEvent" : "New",
+  "OrderEvent" : "Succeeded",
   "ExternalId" : "REF99102933C", 
   "Created" : "2018-05-02",
   "CustomerNumber" : "2" 
@@ -38,7 +38,7 @@ There are three ways of receiving the webhooks to your business domain.
 ```XML
 <Order>
   <Token>Token123ABC</token>
-  <OrderEvent>New</OrderEvent>
+  <OrderEvent>Succeeded</OrderEvent>
   <ExternalId>REF99102933C</ExternalId>
   <Created>2018-05-02</Created>
   <CustomerNumber>2</CustomerNumber>
