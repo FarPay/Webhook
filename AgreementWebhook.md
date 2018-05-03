@@ -29,7 +29,8 @@ There are three ways of receiving the webhooks to your business domain.
   "AgreementType" : "Card", 
   "CardMask" : "1234 XXXXX XXXXX 4321",
   "CardExpire" : "202009",
-  "Event" : "Create"
+  "Event" : "Create",
+  "Checksum" : "KJVDDNDKJNAURINDSKJDVNSKJD"
   }
 ```
 
@@ -44,13 +45,14 @@ There are three ways of receiving the webhooks to your business domain.
   <CardMask>1234 XXXX XXXX 4321</CardMask>
   <CardExpire>202009</CardExpire>
   <Event>Create</Event>
+  <Checksum>KJVDDNDKJNAURINDSKJDVNSKJD</Checksum>
 </Order>
 ```
 
 ## GET url parameters
 
 ```
-https://<yourdomain>/SomeEndpoint/?CustomerNumber=2&AgreementId=12345&AgreementType=CardMask&Created=1234 XXXX XXXX 4321&CardExpire=202009&Event=Create
+https://<yourdomain>/SomeEndpoint/?CustomerNumber=2&AgreementId=12345&AgreementType=CardMask&Created=1234 XXXX XXXX 4321&CardExpire=202009&Event=Create&Checksum=KJVDDNDKJNAURINDSKJDVNSKJD
 ```
 
 ###### [Webhook](README.md) > Agreement webhook

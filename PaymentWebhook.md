@@ -29,8 +29,8 @@ There are three ways of receiving the webhooks to your business domain.
   "OrderEvent" : "Succeeded",
   "ExternalId" : "REF99102933C", 
   "Created" : "2018-05-02",
-  "CustomerNumber" : "2"
-  "Checksum" : "KJVDDNDKJNAURINDSKJDVNSKJD"
+  "CustomerNumber" : "2",
+  "Cheksum" : "KJVDDNDKJNAURINDSKJDVNSKJD"
   }
 ```
 
