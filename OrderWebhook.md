@@ -14,8 +14,12 @@ The events that are sent as webhooks are
 # Data layout
 The data focus on a complete picture of an order, including the changing status. Remark that the user input details are saved in various secured environments e.g. a PCI DSS environment for card information. These details are not carried back with the webhooks.
 
-Here is an example, passed as a **POST** with a JSON payload in the body. 
+There are three ways of receiving the webhooks to your business domain.
+* POST with JSON payload
+* POST with XML payload
+* GET with Url parametres
 
+## POST Json payload
 ```JavaScript
 "Order": {  
   "Token" : "Token123ABC",  
@@ -26,7 +30,7 @@ Here is an example, passed as a **POST** with a JSON payload in the body.
   }
 ```
 
-And the XML payload
+## POST XML payload
 
 ```XML
 <Order>
@@ -37,3 +41,10 @@ And the XML payload
   <CustomerNumber>2</CustomerNumber>
 </Order>
 ```
+
+## GET url parameters
+
+```
+https://<yourdomain>/SomeEndpoint/?Token=Token123ABC&OrderEvent=New&ExternalId=REF99102933C&Created=2018-05-02&CustomerNumber=2
+```
+
