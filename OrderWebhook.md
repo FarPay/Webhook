@@ -6,9 +6,10 @@ The events that are sent as webhooks are
 
 | Event          | Value  | Description  |
 |----------------|--------|--------------|
-| New            |  100  | When the request is created from the API |
-| PendingPayment |  200  | In a scenario, where the user has commitied the agreement infomration e.g. direct debit with Leverandørservice or Betalingsservice, and is about to enter the initial payment into the card form or pay by MobilePay |
-| PendingCustomerNumber | 300 | Pending customer number occurs after the ser has input both the agreement details of the recurring payment, as well as the initial payment if present. The system leaps to this state, when the order was created without the customer present |
+| New            |  300  | When the request is created from the API |
+| PendingPayment |  310  | In a scenario, where the user has commitied the agreement infomration e.g. direct debit with Leverandørservice or Betalingsservice, and is about to enter the initial payment into the card form or pay by MobilePay |
+| PendingCustomerNumber | 320 | Pending customer number occurs after the ser has input both the agreement details of the recurring payment, as well as the initial payment if present. The system leaps to this state, when the order was created without the customer present |
+| Order Completed | 330 | The order was completed |
 
 
 # Data layout
