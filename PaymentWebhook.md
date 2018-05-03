@@ -29,7 +29,8 @@ There are three ways of receiving the webhooks to your business domain.
   "OrderEvent" : "Succeeded",
   "ExternalId" : "REF99102933C", 
   "Created" : "2018-05-02",
-  "CustomerNumber" : "2" 
+  "CustomerNumber" : "2"
+  "Checksum" : "KJVDDNDKJNAURINDSKJDVNSKJD"
   }
 ```
 
@@ -42,13 +43,14 @@ There are three ways of receiving the webhooks to your business domain.
   <ExternalId>REF99102933C</ExternalId>
   <Created>2018-05-02</Created>
   <CustomerNumber>2</CustomerNumber>
+  <Checksum>KJVDDNDKJNAURINDSKJDVNSKJD</Checksum>
 </Order>
 ```
 
 ## GET url parameters
 
 ```
-https://<yourdomain>/SomeEndpoint/?Token=Token123ABC&OrderEvent=New&ExternalId=REF99102933C&Created=2018-05-02&CustomerNumber=2
+https://<yourdomain>/SomeEndpoint/?Token=Token123ABC&OrderEvent=New&ExternalId=REF99102933C&Created=2018-05-02&CustomerNumber=2&Checksum=KJVDDNDKJNAURINDSKJDVNSKJD
 ```
 
 ###### [Webhook](README.md) > Payment webhook
