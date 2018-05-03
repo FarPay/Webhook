@@ -13,3 +13,8 @@ The events are gathered arround
 * [Payment](PaymentWebhook.md)
 * [Agreement](AgreementWebhook.md)
 * [Order](OrderWebhook.md)
+
+# Setup
+There are a couple of features, that needs attention before receiving any webhooks from FarPay. Firstoff is what webhook types you want to receive. The types are mentioned above - they can be selected individually, or all.
+
+Secondly, the security enhancement which is an optional feature of the webhooks, but *highly reccomended* feature, to ensure message integrety. The step consists of adding a secret to the webhook settings, where as FarPay concatenates the value with the secret, and outputs a checksom, that is appended to the webhook payload or url.
