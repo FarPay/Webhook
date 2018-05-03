@@ -1,7 +1,7 @@
 # Order webhook
 The order webhook is executed from the FarPay' PaymentWindow, when the user commits data into the form.
 
-# Order events)
+# Order events
 The events that are sent as webhooks are 
 
 | Event          | Value  | Description  |
