@@ -24,33 +24,35 @@ There are three ways of receiving the webhooks to your business domain.
 
 ## POST Json payload
 ```JavaScript
-"Order": {  
-  "Token" : "Token123ABC",  
-  "OrderEvent" : "Succeeded",
-  "ExternalId" : "REF99102933C", 
-  "Created" : "2018-05-02",
-  "CustomerNumber" : "2",
-  "Cheksum" : "KJVDDNDKJNAURINDSKJDVNSKJD"
+"Payment": {  
+  "Event" : "Succeeded",
+  "InvoiceNumber": "1234567BAVV",
+  "CustomerNumber" : "66776655",
+  "PaymentDueDate" : "2018-05-02",
+  "Currency": "DKK",
+  "InvoiceAmount" : 120.25,
+  "Amount" : 90.95
   }
 ```
 
 ## POST XML payload
 
 ```XML
-<Order>
-  <Token>Token123ABC</token>
-  <OrderEvent>Succeeded</OrderEvent>
-  <ExternalId>REF99102933C</ExternalId>
-  <Created>2018-05-02</Created>
-  <CustomerNumber>2</CustomerNumber>
-  <Checksum>KJVDDNDKJNAURINDSKJDVNSKJD</Checksum>
-</Order>
+<Payment>
+  <Event>Succeeded</Event>
+  <InvoiceNumber>1234567BAVV</InvoiceNumber>
+  <CustomerNumber>66776655</CustomerNumber>
+  <PaymentDueDate>2018-05-02</PaymentDueDate>
+  <Currency>DKK</Currency>
+  <InvoiceAmount>120.25</InvoiceAmount>
+  <Amount>90.95</Amount>
+</Payment>
 ```
 
 ## GET url parameters
 
 ```
-https://<yourdomain>/SomeEndpoint/?Token=Token123ABC&OrderEvent=New&ExternalId=REF99102933C&Created=2018-05-02&CustomerNumber=2&Checksum=KJVDDNDKJNAURINDSKJDVNSKJD
+https://<yourdomain>/SomeEndpoint/?Event=Succeeded&InvoiceNumber=1234567BAVV&CustomerNumber=66776655&PaymentDueDate=2018-05-02&Currency=DKK&InvoiceAmount=120.25&Amount=90.95
 ```
 
 ###### [Webhook](README.md) > Payment webhook
