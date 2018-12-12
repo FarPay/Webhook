@@ -14,6 +14,21 @@ The events that are sent as webhooks are
 | RejectedByCustomer | 230 | The customer has rejected a schedule payment. This can be done by cancelling in the customer online bank |
 | ReimbursedByBank | 240 |  The financial institution of the customer is cancelling the payment. A typical scenario is that the customer does not have sufficient funds, or might have passed. |
 
+# Payment Type
+The given payment type is also specified in the webhook event, the available types are
+
+| Type                   | Description                                  |
+|------------------------|----------------------------------------------|
+| BS                     | Betalingsservice                             |
+| LS                     | Leverandørservice                            |
+| FI                     | FI-Indbetalingskort (+71)....                |
+| DanKort                | Dankort                                      |
+| Visa                   | Visa                                         |
+| MasterCard             | MasterCard                                   |
+| MobilePaySubscriptions | MobilePay Subscriptions (Recurring Payments) |
+| MobilePayInvoice       | MobilePay Invoice (Single payments)          |
+
+
 # Data layout
 The data is focused on giving the information of what is paid, the amount and how it was paid.
 
@@ -21,6 +36,8 @@ There are three ways of receiving the webhooks to your business domain.
 * POST with JSON payload
 * POST with XML payload
 * GET with Url parametres
+
+
 
 ## POST Json payload
 ```JavaScript
@@ -31,7 +48,8 @@ There are three ways of receiving the webhooks to your business domain.
   "PaymentDueDate" : "2018-05-02",
   "Currency": "DKK",
   "InvoiceAmount" : 120.25,
-  "Amount" : 90.95
+  "Amount" : 90.95,
+  "PaymentType" : "BS"
   }
 ```
 
@@ -46,13 +64,14 @@ There are three ways of receiving the webhooks to your business domain.
   <Currency>DKK</Currency>
   <InvoiceAmount>120.25</InvoiceAmount>
   <Amount>90.95</Amount>
+  <PaymentType>BS</PaymentType>
 </Payment>
 ```
 
 ## GET url parameters
 
 ```
-https://<yourdomain>/SomeEndpoint/?Event=Succeeded&InvoiceNumber=1234567BAVV&CustomerNumber=66776655&PaymentDueDate=2018-05-02&Currency=DKK&InvoiceAmount=120.25&Amount=90.95
+https://<yourdomain>/SomeEndpoint/?Event=Succeeded&InvoiceNumber=1234567BAVV&CustomerNumber=66776655&PaymentDueDate=2018-05-02&Currency=DKK&InvoiceAmount=120.25&Amount=90.95&PaymentType=BS
 ```
 
 ###### [Webhook](README.md) > Payment webhook
