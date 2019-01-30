@@ -41,8 +41,9 @@ There are three ways of receiving the webhooks to your business domain.
 
 ## POST Json payload
 ```JavaScript
-"Payment": {  
+{  
   "Event" : "Succeeded",
+  "PaymentReference" : "ABC123-Reference",
   "InvoiceNumber": "1234567BAVV",
   "CustomerNumber" : "66776655",
   "PaymentDueDate" : "2018-05-02",
@@ -50,7 +51,7 @@ There are three ways of receiving the webhooks to your business domain.
   "InvoiceAmount" : 120.25,
   "Amount" : 90.95,
   "PaymentType" : "BS"
-  }
+}
 ```
 
 ## POST XML payload
@@ -58,6 +59,7 @@ There are three ways of receiving the webhooks to your business domain.
 ```XML
 <Payment>
   <Event>Succeeded</Event>
+  <PaymentReference>ABC123-Reference</PaymentReference>
   <InvoiceNumber>1234567BAVV</InvoiceNumber>
   <CustomerNumber>66776655</CustomerNumber>
   <PaymentDueDate>2018-05-02</PaymentDueDate>
@@ -71,7 +73,7 @@ There are three ways of receiving the webhooks to your business domain.
 ## GET url parameters
 
 ```
-https://<yourdomain>/SomeEndpoint/?Event=Succeeded&InvoiceNumber=1234567BAVV&CustomerNumber=66776655&PaymentDueDate=2018-05-02&Currency=DKK&InvoiceAmount=120.25&Amount=90.95&PaymentType=BS
+https://<yourdomain>/SomeEndpoint/?Event=Succeeded&PaymentReference=ABC123-Reference&InvoiceNumber=1234567BAVV&CustomerNumber=66776655&PaymentDueDate=2018-05-02&Currency=DKK&InvoiceAmount=120.25&Amount=90.95&PaymentType=BS
 ```
 
 ###### [Webhook](README.md) > Payment webhook
