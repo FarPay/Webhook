@@ -41,39 +41,45 @@ There are three ways of receiving the webhooks to your business domain.
 
 ## POST Json payload
 ```JavaScript
-{  
-  "Event" : "Succeeded",
-  "PaymentReference" : "ABC123-Reference",
+
+{
+  "Type": "Payment",
+  "Event": "Succeeded",
   "InvoiceNumber": "1234567BAVV",
-  "CustomerNumber" : "66776655",
-  "PaymentDueDate" : "2018-05-02",
+  "CustomerNumber": "66776655",
+  "PaymentDueDate": "{yyyy-MM-dd}",
   "Currency": "DKK",
-  "InvoiceAmount" : 120.25,
-  "Amount" : 90.95,
-  "PaymentType" : "BS"
+  "InvoiceAmount": "1215.0000", // tusind og to hundrede og femten komma null kr.
+  "Amount": "1125.0000", // tusind og to hundrede og femten komma null kr.
+  "PaymentType": "LS",
+  "PaymentReference": "ABC123-Reference",
+  "AgreementId": "1234"
 }
+
 ```
 
 ## POST XML payload
 
 ```XML
 <Payment>
+  <Type>Payment</Type>
   <Event>Succeeded</Event>
-  <PaymentReference>ABC123-Reference</PaymentReference>
   <InvoiceNumber>1234567BAVV</InvoiceNumber>
   <CustomerNumber>66776655</CustomerNumber>
-  <PaymentDueDate>2018-05-02</PaymentDueDate>
+  <PaymentDueDate>{yyyy-MM-dd}</PaymentDueDate>
   <Currency>DKK</Currency>
-  <InvoiceAmount>120.25</InvoiceAmount>
-  <Amount>90.95</Amount>
-  <PaymentType>BS</PaymentType>
+  <InvoiceAmount>1215.0000</InvoiceAmount> /* tusind og to hundrede og femten komma null kr. */
+  <Amount>1125.0000</Amount> /* tusind og to hundrede og femten komma null kr. */
+  <PaymentType>LS</PaymentType>
+  <PaymentReference>ABC123-Reference</PaymentReference>
+  <AgreementId>1234<AgreementId>
 </Payment>
 ```
 
 ## GET url parameters
 
 ```
-https://<yourdomain>/SomeEndpoint/?Event=Succeeded&PaymentReference=ABC123-Reference&InvoiceNumber=1234567BAVV&CustomerNumber=66776655&PaymentDueDate=2018-05-02&Currency=DKK&InvoiceAmount=120.25&Amount=90.95&PaymentType=BS
+https://<yourdomain>/SomeEndpoint/?Type=PaymentEvent=Succeeded&PaymentReference=ABC123-Reference&InvoiceNumber=1234567BAVV&CustomerNumber=66776655&PaymentDueDate={yyyy-MM-dd}&Currency=DKK&InvoiceAmount=1215.000&Amount=1215.000&PaymentType=LS
 ```
 
 ###### [Webhook](README.md) > Payment webhook
