@@ -11,8 +11,8 @@ The events that are sent as webhooks are
 | Succeeded      |  200   | The payment was successfully executed |
 | Canceled       |  210   | The customer has cancelled the payment |
 | Failed         |  220   | The paiment failed, e.g. beause lack of funds, card has expired, a negative outcome of the attempt of paying an amount |
-| RejectedByCustomer | 230 | The customer has rejected a schedule payment. This can be done by cancelling in the customer online bank |
-| ReimbursedByBank | 240 |  The financial institution of the customer is cancelling the payment. A typical scenario is that the customer does not have sufficient funds, or might have passed. |
+| [RejectedByCustomer](PaymentWebhookRejectedByCustomer.md) | 230 | The customer has rejected a schedule payment. This can be done by cancelling in the customer online bank |
+| [ReimbursedByBank](PaymentWebhookReimbursedByBank.md) | 240 |  The financial institution of the customer is cancelling the payment. A typical scenario is that the customer does not have sufficient funds, or might have passed. |
 
 # Payment Type
 The given payment type is also specified in the webhook event, the available types are
@@ -81,5 +81,7 @@ There are three ways of receiving the webhooks to your business domain.
 ```
 https://<yourdomain>/SomeEndpoint/?Type=PaymentEvent=Succeeded&PaymentReference=ABC123-Reference&InvoiceNumber=1234567BAVV&CustomerNumber=66776655&PaymentDueDate={yyyy-MM-dd}&Currency=DKK&InvoiceAmount=1215.000&Amount=1215.000&PaymentType=LS
 ```
+
+
 
 ###### [Webhook](README.md) > Payment webhook
