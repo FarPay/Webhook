@@ -27,8 +27,9 @@ When the different payment types are executed in this context, the values have d
 | Type               | Behaviour                   | Reason                |
 |--------------------|-----------------------------|-----------------------|
 | BS                 | The Amount is 0 (zero)      | The money has not been transfer from the debtors account to yours in the originated payment - Hence no payment is refunded |
+| BS                 | Amount > 0                  | The money has been transfered in the bank, and will be transfered back to the debtor |
 | MobilePay          | InvoiceAmount and Amount can be different | When the amount is provisioined from MobilePay, it can differe from the originated amount |
-| 
+
 
 # Example values
 
