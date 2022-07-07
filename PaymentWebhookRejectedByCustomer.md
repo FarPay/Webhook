@@ -4,8 +4,8 @@
 The customer has rejected a schedule payment. This can be done by cancelling in the customer online bank e.g. when cancelling an BS payment.
 
 ## POST Json payload
-```JavaScript
 
+```JavaScript
 {
     "Type": "Payment",
     "Event": "RejectedByCustomer",
@@ -38,7 +38,7 @@ BS Rejection, prior to the payment in the bank. If the payment has occur, and th
 {
     "Type": "Payment",
     "Event": "RejectedByCustomer",
-    "InvoiceNumber": "20220517-cvcvd223445673",
+    "InvoiceNumber": "234-cvcv-445673",
     "CustomerNumber": "123123123123",
     "PaymentDueDate": "2022-07-01",
     "Currency": "DKK",
