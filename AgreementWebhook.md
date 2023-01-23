@@ -10,9 +10,16 @@ Here is the list of potential agreement events. Some of the events only apply to
 |----------------|----------------|--------------|----|----|----|------|
 | Create |  100  | When the agreement is received from the provider as valid | ✅ | ✅ | ✅ | ✅ |
 | Change |  110  | Changes, like changing an account number, or a card also occur when the provider returns with a result | ⛔ | ✅ | ✅ | ⛔ |
-| Cancel | 120 | An agreement is cancelled instantly, and afterwards the agreement cannot be used as a payment mean | ✅ | ✅ | ✅ | ✅ |
+| Cancel | 120 | An agreement is cancelled instantly, and afterwards the agreement cannot be used as a payment mean. Further more, when the agreement status is provisioned to NETS, the pending payments in NETS will transision to its next state _*(*1)*_ | ✅ | ✅ | ✅ | ✅ |
 | Delete | 130 | Agreement can be deleted, when never used. Otherwise it can be cancelled | ✅ | ✅ | ✅ | ✅ |
 
+_*(*1)*_
+When a BS agreement is cancelled, the pending payments will transision according to the ruleset of BS Total or BS Basic configuraiton. See the transision in the table below.
+
+| Type      | Transision |
+|-----------|------------|
+| BS Total  | The payment transisions to being a payment slip, and is anotated with a new *+71 key*. And when the payment slip is paid, FarPay will be able to associate the payment with the given customer, and not with the payment. |
+| BS Basic  | The payment is parked, no further processing will be made |
 
 # Data layout
 The data has a partial view of the agreement, due to security. Card information is distributed with an expiredate, and a partial masked cardnumber. Bank account information is not distributed on webhooks.
