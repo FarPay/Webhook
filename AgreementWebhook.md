@@ -4,13 +4,14 @@
 The order webhook is executed from the FarPay' core, when the agreements are created from the payment system providers, such as Card vendors, NETS or MobilePay.
 
 # Agreement Events
-The events that are sent as webhooks are 
+Here is the list of potential agreement events. Some of the events only apply to specific agreements. 
 
-| Event          | Value  | Description  |
-|----------------|--------|--------------|
-| Agreement Created |  100  | When the agreement is received from the provider as valid |
-| Agreement Changed |  110  | Changes, like changing an account number, or a card also occur when the provider returns with a result |
-| Agreement Deleted | 120 | An agreement is deleted instantly, and afterwards the agreement cannot be used as a payment mean |
+| Event          | Numeric Value  | Description  | MP | BS | LS | Card |
+|----------------|----------------|--------------|----|----|----|------|
+| Create |  100  | When the agreement is received from the provider as valid | ✅ | ✅ | ✅ | ✅ |
+| Change |  110  | Changes, like changing an account number, or a card also occur when the provider returns with a result | ⛔ | ✅ | ✅ | ⛔ |
+| Cancel | 120 | An agreement is cancelled instantly, and afterwards the agreement cannot be used as a payment mean | ✅ | ✅ | ✅ | ✅ |
+| Delete | 130 | Agreement can be deleted, when never used. Otherwise it can be cancelled | ✅ | ✅ | ✅ | ✅ |
 
 
 # Data layout
@@ -24,7 +25,7 @@ There are three ways of receiving the webhooks to your business domain.
 ## POST Json payload
 ```JavaScript
 "Agreement": {  
-  "CustomerNumber" : "2",  
+  "CustomerNumber" : "ABC123",  
   "AgreementId" : "12345",
   "AgreementType" : "Card", 
   "CardMask" : "1234 XXXXX XXXXX 4321",
