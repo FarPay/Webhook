@@ -13,7 +13,7 @@ The events that are sent as webhooks are
 | Failed         |  220   | The paiment failed, e.g. beause lack of funds, card has expired, a negative outcome of the attempt of paying an amount |
 | [RejectedByCustomer](PaymentWebhookRejectedByCustomer.md) | 230 | The customer has rejected a schedule payment. This can be done by cancelling in the customer online bank |
 | [ReimbursedByBank](PaymentWebhookReimbursedByBank.md) | 240 |  The financial institution of the customer is cancelling the payment. A typical scenario is that the customer does not have sufficient funds, or might have passed. |
-| Refunded | Refunding a payment, where the transaction is "rolled-back", as the money are moved back to the debtor account, can be accomplished automatically by Card, LS, BS and MobilePay. Remark, that thare are timelimits for how long a transactional based "roleback" can be performed. |
+| Refunded | 245 | Refunding a payment, where the transaction is "rolled-back", as the money are moved back to the debtor account, can be accomplished automatically by Card, LS, BS and MobilePay. Remark, that thare are timelimits for how long a transactional based "roleback" can be performed. |
 
 # Payment Type
 The given payment type is also specified in the webhook event, the available types are
