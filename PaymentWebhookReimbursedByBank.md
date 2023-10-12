@@ -37,11 +37,14 @@ AgreementId | string | The agreement id, if any
 
 ## Valid events for ``ReimbursedByBank``
 
- Paymnet Type | Event | Description 
---------------|-------|-------------------
-BS            | Reimbursment | Bank initiated, where money are transferred from the merchant, back to the debtor
-BS            | 299 | Chargeback, initiated by the customer??
-LS            | 0555 | ?? who is the initiator??
+ Paymnet Type | Event        |  TransCodes      | Description 
+--------------|--------------|------------------|-----------------
+BS            | Reimbursment | `239`            | Bank initiated, where money are transferred from the merchant, back to the debtor.
+BS            | Rejected     | `237`            | No amount is available, the payment has been cancelled prior to the money transfer.
+BS            | Rejected     | `237` w. amount  | Amount is implicated, and transferred from the merchant, back to the debtor. 
+LS            | Reimbursed   | `555`            | Bank initiated, where money are transferred from the merchant, back to the debtor.
+LS            | Rejected     | `530` w. amount  | Customer initiated - Amount is implicated, and transferred from the merchant, back to the debtor. 
+
 
 When reimbusment is a part of BS and LS, where the money are transferred back to the debtor. 
 
