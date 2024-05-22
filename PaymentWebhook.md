@@ -27,7 +27,7 @@ The given payment type is also specified in the webhook event, the available typ
 | Visa                   | Visa                                         |
 | MasterCard             | MasterCard                                   |
 | MobilePaySubscriptions | MobilePay Subscriptions (Recurring Payments) |
-| MobilePayInvoice       | MobilePay Invoice (Single payments)          |
+| MobilePayPayment       | MobilePay ePayment (Single payments)         |
 
 
 # Data layout
