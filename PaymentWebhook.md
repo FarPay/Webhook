@@ -51,7 +51,7 @@ There are three ways of receiving the webhooks to your business domain.
   "PaymentDueDate": "{yyyy-MM-dd}",
   "Currency": "DKK",
   "InvoiceAmount": "1215.0000", // tusind og to hundrede og femten komma null kr.
-  "Amount": "1125.0000", // tusind og to hundrede og femten komma null kr.
+  "Amount": "1215.0000", // tusind og to hundrede og femten komma null kr.
   "PaymentType": "LS",
   "PaymentReference": "ABC123-Reference",
   "AgreementId": "1234"
@@ -70,7 +70,7 @@ There are three ways of receiving the webhooks to your business domain.
   <PaymentDueDate>{yyyy-MM-dd}</PaymentDueDate>
   <Currency>DKK</Currency>
   <InvoiceAmount>1215.0000</InvoiceAmount> /* tusind og to hundrede og femten komma null kr. */
-  <Amount>1125.0000</Amount> /* tusind og to hundrede og femten komma null kr. */
+  <Amount>1215.0000</Amount> /* tusind og to hundrede og femten komma null kr. */
   <PaymentType>LS</PaymentType>
   <PaymentReference>ABC123-Reference</PaymentReference>
   <AgreementId>1234<AgreementId>
