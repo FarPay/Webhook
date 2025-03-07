@@ -29,8 +29,7 @@ There are three ways of receiving the webhooks to your business domain.
   "OrderEvent" : "New",
   "ExternalId" : "REF99102933C", 
   "Created" : "2018-05-02",
-  "CustomerNumber" : "2",
-  "Checksum" : "KJVDDNDKJNAURINDSKJDVNSKJD"
+  "CustomerNumber" : "2"
   }
 ```
 
@@ -43,7 +42,6 @@ There are three ways of receiving the webhooks to your business domain.
   <ExternalId>REF99102933C</ExternalId>
   <Created>2018-05-02</Created>
   <CustomerNumber>2</CustomerNumber>
-  <Checksum>KJVDDNDKJNAURINDSKJDVNSKJD</Checksum>
 </Order>
 ```
 

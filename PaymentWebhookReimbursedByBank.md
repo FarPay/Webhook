@@ -6,7 +6,7 @@ a payment, now has been transferred back to the sending party.
 
 ## POST Json payload
 
-```JJavascript
+```Javascript
 {
     "Type": "Payment",
     "Event": "ReimbursedByBank",
